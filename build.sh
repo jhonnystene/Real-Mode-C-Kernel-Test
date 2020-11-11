@@ -29,7 +29,9 @@ cd ../../
 
 # Combine C kernel with ASM Boot2.
 echo "Assembling kernel..."
-nasm -O0 -w+orphan-labels -f bin -o src/kernel/kernel.bin src/kernel/kernel-init.asm || exit
+#nasm -O0 -w+orphan-labels -f bin -o src/kernel/kernel.bin src/kernel/kernel-init.asm || exit
+nasm -O0 -w+orphan-labels -f bin -o src/kernel/kernel.bin src/kernel/kernel-main.asm || exit
+
 
 # Write kernel to floppy image.
 echo "Mounting disk image..."

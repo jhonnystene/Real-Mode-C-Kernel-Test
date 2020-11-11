@@ -2,10 +2,19 @@
  * kernel.c
  * Real Mode Test OS written in C.
  * 
- * This introduces quite a lot of issues. If there was some way to 
- * initialise the stack from inside C rather than ASM, that might fix 
- * some of the problems.
+ * This introduces quite a lot of issues. It's probably not worth the
+ * trouble.
  */
+ 
+asm("section .text"); // Make sure we're in the text section
+
+// Initialise stack
+asm("mov ax, 0");
+asm("mov ss, ax");
+asm("mov sp, [stack]");
+
+// Jump to kernel
+asm("jmp _kernel_main");
  
 // Normally, you'd write to 0xB8000. Because SmallerC doesn't like that,
 // we use int 0x10 instead.
@@ -41,3 +50,5 @@ void kernel_main(void) {
 	
 	while(1) {} // Halt
 }
+
+asm("stack:");
