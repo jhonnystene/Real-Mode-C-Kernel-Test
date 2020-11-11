@@ -149,6 +149,15 @@ _kernel_main:
 	push	33
 	call	_printchar
 	sub	sp, -2
+; while
+; RPN'ized expression: "1 "
+; Expanded expression: "1 "
+; Expression value: 1
+L5:
+; {
+; }
+	jmp	L5
+L6:
 L3:
 	leave
 	ret
@@ -186,5 +195,5 @@ L3:
 ; Ident <something>
 ; Bytes used: 171/5632
 
-; Next label number: 5
+; Next label number: 7
 ; Compilation succeeded.
