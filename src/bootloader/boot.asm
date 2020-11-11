@@ -2,7 +2,7 @@
 
 ; ==================================================================
 ; The Mike Operating System bootloader
-; Copyright (C) 2006 - 2014 MikeOS Developers -- see doc/LICENSE.TXT
+; Copyright (C) 2006 - 2014 MikeOS Developers
 ;
 ; Based on a free boot loader by E Dehling. It scans the FAT12
 ; floppy for KERNEL.BIN (the MikeOS kernel), loads it and executes it.
